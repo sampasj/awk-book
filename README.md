@@ -1,8 +1,7 @@
-# awk-book
-The AWK Programming language 2nd Edition
+## The AWK Programming language 2nd Edition
 
-Alfred V. Aho
-Brian W. Kernighan
-Peter J. Weinberger
+*Alfred V. Aho
+*Brian W. Kernighan
+*Peter J. Weinberger
 
 Addison-Wesley
