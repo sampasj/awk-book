@@ -2,7 +2,7 @@
 #   input:  two sorted files, tab-separated fields
 #   output: natural join of lines with common first field
 
-BRGIN {
+BEGIN {
     OFS = sep = "\t"
     file2 = ARGV[2]
     ARGV[2] = ""  # read file1 implicitly, file2 explicitly
@@ -22,7 +22,7 @@ BRGIN {
 function getgroup() { # put equal prefix group into gp[1..ng
     if (getone(file2, gp, 1) <= 0)    # end of file
         return 0
-    for (ng == 2; getone(file2, gp, ng) > 0; ng++) {
+    for (ng = 2; getone(file2, gp, ng) > 0; ng++) {
         if (prefix(gp[ng]) != prefix(gp[1])) {
             unget(gp[ng])    # went too far
             return ng-1
