@@ -31,3 +31,19 @@ function getgroup() { # put equal prefix group into gp[1..ng
     return ng-1
 }
 
+function getone(f, gp, n) {  # get next line in gp[n]
+    if (eofstat <= 0) # eof or error has occurrred
+        return 0
+    if (ungot) {      # return lookahead line if it exists
+        gp[n] = ungotline
+        ungot = 0
+        return 1
+    }
+    return eofstat = (getline gp[n] <f)
+}
+
+function unget(s)   { ungotline = s; ungot = 1 }
+
+function prefix(s)  { return substr(s, 1, index(s, sep) - 1) }
+
+function surfix(s)  { return substr(s, index(s, sep) + 1) }
