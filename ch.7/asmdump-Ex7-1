@@ -28,9 +28,16 @@ BEGIN {
            $2 = symtab[$2]     # replace by numeric value
         mem[nextmem++] = 1000 * op[$1] + $2 # pack into word
     }
+    close(tempfile)
 
 # DUMP MEMORY
-for (i = 0; i < nextmem; i++) {printf("%3d:  %05d\n", i, mem[i])}
+    for(a in symtab){label[symtab[a]] = a}
+    i = 0
+    while (getline <tempfile > 0) {
+        printf("%3d:  %05d   %-4s %-5s %s\n", i, mem[i], label[i], $1, $2)
+        i++
+    }
+    # for (i = 0; i < nextmem; i++) {printf("%3d:  %05d\n", i, mem[i])}
 
 
 # INTERPRETOR
