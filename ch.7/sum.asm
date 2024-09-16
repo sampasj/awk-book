@@ -5,7 +5,7 @@
 loop get           # read a number
      jz    done    # no more input if number is zero
      add   sum     # add in accumulated sum
-     st    sum     # store mew value back in sum
+     st    sum     # store new value back in sum
      j     loop    # go back and read another number
 
 done ld    sum     # print sum
