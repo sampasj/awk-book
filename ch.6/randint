@@ -1,0 +1,5 @@
+# randint - return random integer k, 1 <= k <= n
+
+function randint(n) {
+    return int(n * rand()) + 1
+}
