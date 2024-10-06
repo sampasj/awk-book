@@ -6,6 +6,7 @@
 BEGIN{
     srand()
     for(i = 1; i < 6; i++) {
-        print(randlet())
+        printf(randlet())
     }
+    print ""
 }
