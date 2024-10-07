@@ -1,4 +1,4 @@
-# test rand function mail program
+# test rand function main program
 
 @include "randint"
 @include "randlet"
