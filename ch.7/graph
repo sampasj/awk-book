@@ -10,7 +10,7 @@ BEGIN{
 }
 /xlabel|ylabel|title/ {
     label = $1; $1 = ""
-    printf(plt.%s(\"%s\")\n"), label, $0)
+    printf("plt.%s(\"%s\")\n", label, $0)
     next
 }
 NF == 1 { print ++n, $1 >"temp" }
