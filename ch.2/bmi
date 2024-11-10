@@ -1,0 +1,4 @@
+# bmi: compute body mass index
+
+awk 'BEGIN { print kilograms meters" }
+     { printf("%.1f\n", $1 / $2) }
