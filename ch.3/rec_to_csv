@@ -1,0 +1,15 @@
+# to_csv - convert s to proper "..."
+
+function to_csv(s) {
+    gsub(/"/, "\"\"", s)
+    return "\"" s "\""
+}
+
+# rec_to_csv - convert a record to csv
+
+function rec_to_csv(    s, i) {
+    for (i = 1; i < NF; i++)
+      s = s to_csv($i) ","
+    s = s to_csv($NF)
+    return s
+}
