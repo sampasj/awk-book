@@ -6,5 +6,5 @@
 EPOC=1640995200
 while [ "$EPOC" -le 1731319337 ]; do
   date -d "@$EPOC" +"%Y/%-m/%-d"
-  EPOC=`expr $EPOC + 86400`
+  EPOC=`expr $EPOC + 86400`   # 1 day: 60*60*24seconds
 done | awk '{$2 = int( rand() * 20000 ) + 1000; print}'
