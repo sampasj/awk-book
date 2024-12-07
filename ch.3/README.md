@@ -18,3 +18,17 @@ $ awk 'NF != 5 || $3 != $4 + $5' titanic.tsv
 Type    Class   Total   Lived   Died
 $
 ```
+
+## 連想配列( associative arrays )の例
+```
+$ awk -f array-sample1 titanic.tsv
+Female 425
+Child 109
+Male 1690
+
+Third 706
+First 325
+Crew 908
+Second 285
+$
+```
