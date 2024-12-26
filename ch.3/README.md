@@ -36,3 +36,7 @@ $
 ## オリジナルデータ
 https://www.kaggle.com/datasets/rdoume/beerreviews
 
+## DropBoxコピー
+GitHubには100MB以上のファイルをアップロードできなかったのでDropBoxで共有した。
+https://www.dropbox.com/scl/fo/k81fpypa8ns7s0th7c19m/AOalIGsgC-m7xNgDGeGtPJI?rlkey=rz4n07uiv8ti92u3zbmsklfi3&st=xmt9grsp&dl=0
+
