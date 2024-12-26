@@ -67,3 +67,17 @@ sys     0m1.916s
 $
 
 ```
+## gawk 最新のインストール 2024.12.25現在
+```
+https://ftp.jaist.ac.jp/pub/GNU/gawk/
+
+tar xvf gawk-5.3.1.tar.gz
+cd gawk-5.3.1/
+./configure
+make
+sudo make install
+```
+## 5項目抽出　タブ区切りに変換
+```
+$ awk --csv 'BEGIN{OFS="\t"}{print $2, $4, $8, $11, $12}' reviews.csv > rev.tsv
+```
