@@ -40,3 +40,19 @@ https://www.kaggle.com/datasets/rdoume/beerreviews
 GitHubには100MB以上のファイルをアップロードできなかったのでDropBoxで共有した。
 
 https://www.dropbox.com/scl/fi/3pjfqj1o6bon4m6ihyqy4/beer_reviews.csv?rlkey=vzhmtc9mw58tqtknr2j353ixn&st=f2pfxr3l&dl=0
+
+Dell XPS 13
+CPU: Core i7-6500U  @2.50GHz 2Core 4threds
+メモリ: 8GB
+SSD: Samsung 980 1TB
+Windows 11 24H2
+WSL2 Ubuntu 22.04 LTS
+```
+$ time wc reviews.csv
+  1586615  12170544 180174429 reviews.csv
+
+real    0m1.292s
+user    0m1.190s
+sys     0m0.098s
+$
+```
