@@ -32,3 +32,7 @@ Crew 908
 Second 285
 $
 ```
+# ビール評価
+## オリジナルデータ
+https://www.kaggle.com/datasets/rdoume/beerreviews
+
