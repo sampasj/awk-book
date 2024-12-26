@@ -56,3 +56,14 @@ user    0m1.190s
 sys     0m0.098s
 $
 ```
+```
+$ time awk '{ nc += length($0) +1; nw += NF }
+> END{ print NR, nw, nc, FILENAME }' reviews.csv
+1586615 12170527 179963813 reviews.csv
+
+real    0m3.413s
+user    0m1.497s
+sys     0m1.916s
+$
+
+```
