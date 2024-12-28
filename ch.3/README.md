@@ -88,3 +88,15 @@ $ awk -F"\t" 'NR > 1 && $5 > maxabv { maxabv = $5; brewery = $1; name = $4 }END 
 57.7 Schorschbräu Schorschbräu Schorschbock 57%
 $
 ```
+### 10%以上のレビュー数
+```
+$ awk -F"\t" '$5 >= 10 { print $1, $4, $5 }' rev.tsv | wc -l
+194359
+$
+```
+### 0.5%以下のレビュー数
+```
+$ awk -F"\t" '$5 != "" && $5 <= 0.5 { print $1, $4, $5 }' rev.tsv | wc -l
+1023
+$
+```
