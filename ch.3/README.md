@@ -67,7 +67,8 @@ sys     0m1.916s
 $
 
 ```
-## gawk 最新のインストール 2024.12.25現在
+## gawk 最新のインストール 2024.12.25現在  
+--csv オプションを使用できるバージョンにするため
 ```
 https://ftp.jaist.ac.jp/pub/GNU/gawk/
 
@@ -80,4 +81,10 @@ sudo make install
 ## 5項目抽出　タブ区切りに変換
 ```
 $ awk --csv 'BEGIN{OFS="\t"}{print $2, $4, $8, $11, $12}' reviews.csv > rev.tsv
+```
+### レビューデータの中のアルコール度数が最大のビール
+```
+$ awk -F"\t" 'NR > 1 && $5 > maxabv { maxabv = $5; brewery = $1; name = $4 }END { print maxabv, brewery, name }' rev.tsv
+57.7 Schorschbräu Schorschbräu Schorschbock 57%
+$
 ```
