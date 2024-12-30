@@ -100,7 +100,8 @@ $ awk -F"\t" '$5 != "" && $5 <= 0.5 { print $1, $4, $5 }' rev.tsv | wc -l
 1023
 $
 ```
-What ratings are associated with high and low alcohol?
+What ratings are associated with high and low alcohol?  
+高アルコールと低アルコールにはどのような評価があるのか？
 ```
 $ awk -F"\t" '$5 >= 10 {rate += $2; nrate++ }END{print rate/nrate, nrate}' rev.tsv
 3.93702 194359
