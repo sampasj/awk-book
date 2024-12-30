@@ -88,15 +88,30 @@ $ awk -F"\t" 'NR > 1 && $5 > maxabv { maxabv = $5; brewery = $1; name = $4 }END 
 57.7 Schorschbräu Schorschbräu Schorschbock 57%
 $
 ```
-### 10%以上のレビュー数
+### ABVが10%以上のレビュー数
 ```
 $ awk -F"\t" '$5 >= 10 { print $1, $4, $5 }' rev.tsv | wc -l
 194359
 $
 ```
-### 0.5%以下のレビュー数
+### ABVが0.5%以下のレビュー数
 ```
 $ awk -F"\t" '$5 != "" && $5 <= 0.5 { print $1, $4, $5 }' rev.tsv | wc -l
 1023
 $
 ```
+What ratings are associated with high and low alcohol?
+```
+$ awk -F"\t" '$5 >= 10 {rate += $2; nrate++ }END{print rate/nrate, nrate}' rev.tsv
+3.93702 194359
+$ awk -F"\t" '$5 != "" && $5 <= 0.5 {rate += $2; nrate++ }END{print rate/nrate, nrate}' rev.tsv
+2.58895 1023
+$ awk -F"\t" '{rate += $2; nrate++ }END{print rate/nrate, nrate}' rev.tsv
+3.81558 1586615
+$
+```
+アルコール度数が高いビールの点数は、全体の平均点より高い。  
+This is consistent with the personal preferences of at least one of the authors.  
+これは、少なくとも著者の一人[^1]の個人的な好みと一致している。
+
+[^1]: カーニハンに決まっている
