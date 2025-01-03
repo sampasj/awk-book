@@ -9,7 +9,7 @@ $ seq 12 | xargs -n 3 | awk '@include "rec_to_csv"; {print(rec_to_csv())}'
 "10","11","12"
 ```
 
-# タイタニック号
+# タイタニック号の沈没
 ## データ整合性チェック
 各レコードのフィールド数が5か？
 トータル人数のチェック
@@ -31,6 +31,29 @@ First 325
 Crew 908
 Second 285
 $
+```
+## データセット
+
+参考「Titanic：タイタニック号乗客者の生存状況（年齢や性別などの13項目）の表形式データセット」  
+https://atmarkit.itmedia.co.jp/ait/articles/2007/02/news016.html
+```
+titanic3.csv
+各属性（列項目）の意味は以下のようになっている。
+
+pclass： 旅客クラス（1＝1等、2＝2等、3＝3等）。裕福さの目安となる
+name： 乗客の名前
+sex： 性別（male＝男性、female＝女性）
+age： 年齢。一部の乳児は小数値
+sibsp： タイタニック号に同乗している兄弟（Siblings）や配偶者（Spouses）の数
+parch： タイタニック号に同乗している親（Parents）や子供（Children）の数
+ticket： チケット番号
+fare： 旅客運賃
+cabin： 客室番号
+embarked： 出港地（C＝Cherbourg：シェルブール、Q＝Queenstown：クイーンズタウン、S＝Southampton：サウサンプトン）
+boat： 救命ボート番号
+body： 遺体収容時の識別番号
+home.dest： 自宅または目的地
+survived：生存状況（0＝死亡、1＝生存）。通常はこの数値が目的変数として使われる
 ```
 # ビール評価
 ## オリジナルデータ
