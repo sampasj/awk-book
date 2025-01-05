@@ -136,8 +136,8 @@ $ awk -F"\t" '{rate += $2; nrate++ }END{print rate/nrate, nrate}' rev.tsv
 $
 ```
 アルコール度数が高いビールの点数は、全体の平均点より高い。  
-This is consistent with the personal preferences of at least one of the authors.  
-これは、少なくとも著者の一人[^1]の個人的な好みと一致している。
+"This is consistent with the personal preferences of at least one of the authors."  
+「これは、少なくとも著者の一人[^1]の個人的な好みと一致している。」
 [^1]: カーニハンに決まっている
 
 ## Unicode データ
