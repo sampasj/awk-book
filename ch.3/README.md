@@ -70,6 +70,7 @@ CPU: Core i7-6500U  @2.50GHz 2Core 4threds
 SSD: Samsung 980 1TB  
 Windows 11 24H2  
 WSL2 Ubuntu 22.04 LTS  
+2015年12月5日購入  
 ```
 $ time wc reviews.csv
   1586615  12170544 180174429 reviews.csv
@@ -177,4 +178,6 @@ l       4985347
         10586176
 $
 ```
-DELL XPS 13 のWSL2(Ubuntu 22.04 LTS)で61秒かかった。書籍では2015年製 MacBook Air で250秒と書かれているのでそれよりはずっと速い。XPS 13 のCPUはインテル第6世代 ノートPC向け Core i7 である。 
+DELL XPS 13 のWSL2(Ubuntu 22.04 LTS)で61秒かかった。書籍では2015年製 MacBook Air で250秒と書かれているのでそれよりはずっと速い。XPS 13 のCPUはインテル第6世代 ノートPC向け Core i7 である。2015年12月5日購入。  
+書籍と出力結果が違っている。MacとUbuntuでsortコマンドの仕様が違うためか？  
+文字種が195個というのは一致している。
