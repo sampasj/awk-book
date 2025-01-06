@@ -55,6 +55,12 @@ body： 遺体収容時の識別番号
 home.dest： 自宅または目的地
 survived：生存状況（0＝死亡、1＝生存）。通常はこの数値が目的変数として使われる
 ```
+## passengers.csv 作成
+```
+$ awk --csv 'BEGIN{ OFS = "\t" }NR > 1 {print NR - 1, $1, $2, $3, $5, $11, $14, $10, $8, $12, $4}' titanic3.csv | awk -F"\t" '@include "rec_to_csv"; {print(rec_to_csv())}' | sed '1i"row.names","pclass","survived","name","age","embarked","home.dest","room","ticket","boat","sex"' > passengers.csv
+$
+```
+
 # ビール評価
 ## オリジナルデータ
 https://www.kaggle.com/datasets/rdoume/beerreviews
