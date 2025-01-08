@@ -60,7 +60,23 @@ survived：生存状況（0＝死亡、1＝生存）。通常はこの数値が�
 $ awk --csv 'BEGIN{ OFS = "\t" }NR > 1 {print NR - 1, $1, $2, $3, $5, $11, $14, $10, $8, $12, $4}' titanic3.csv | awk -F"\t" '@include "rec_to_csv"; {print(rec_to_csv())}' | sed '1i"row.names","pclass","survived","name","age","embarked","home.dest","room","ticket","boat","sex"' > passengers.csv
 $
 ```
-
+## How many infants were there?
+```
+$ awk --csv 'NR > 1 { OFS="\t"; print $2, $3, $4, $5, $11 }' passengers.csv | awk -F"\t" '$4 != "" && $4 < 1'
+1       1       Allison, Master. Hudson Trevor  0.92    male
+2       1       Caldwell, Master. Alden Gates   0.83    male
+2       1       Hamalainen, Master. Viljo       0.67    male
+2       1       Richards, Master. George Sibley 0.83    male
+2       1       West, Miss. Barbara J   0.92    female
+3       1       Aks, Master. Philip Frank       0.83    male
+3       1       Baclini, Miss. Eugenie  0.75    female
+3       1       Baclini, Miss. Helene Barbara   0.75    female
+3       0       Danbom, Master. Gilbert Sigvard Emanuel 0.33    male
+3       1       Dean, Miss. Elizabeth Gladys "Millvina" 0.17    female
+3       0       Peacock, Master. Alfred Edward  0.75    male
+3       1       Thomas, Master. Assad Alexander 0.42    male
+$
+```
 # ビール評価
 ## オリジナルデータ
 https://www.kaggle.com/datasets/rdoume/beerreviews
