@@ -61,7 +61,7 @@ survived：生存状況（0＝死亡、1＝生存）。通常はこの数値が�
 $ awk --csv 'BEGIN{ OFS = "\t" }NR > 1 {print NR - 1, $1, $2, $3, $5, $11, $14, $10, $8, $12, $4}' titanic3.csv | awk -F"\t" '@include "rec_to_csv"; {print(rec_to_csv())}' | sed '1i"row.names","pclass","survived","name","age","embarked","home.dest","room","ticket","boat","sex"' > passengers.csv
 $
 ```
-## How many infants were there?
+## How many infants were there? 乳児（生まれて一年未満の子）は何人いたか。年齢（age）データが欠けているものがあるので除外する
 ```
 $ awk --csv 'NR > 1 { OFS="\t"; print $2, $3, $4, $5, $11 }' passengers.csv | awk -F"\t" '$4 != "" && $4 < 1'
 1       1       Allison, Master. Hudson Trevor  0.92    male
