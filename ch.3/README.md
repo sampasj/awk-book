@@ -125,6 +125,14 @@ cd gawk-5.3.1/
 make
 sudo make install
 ```
+## MPFR(-Mオプション bignum)を有効にしてmakeするには以下の手順
+```
+sudo apt install build-essential libgmp-dev libmpfr-dev libmpc-dev
+cd gawk-5.3.1/
+./configure --with-mpfr
+make
+sudo make install
+```
 ## 5項目抽出　タブ区切りに変換
 ```
 $ awk --csv 'BEGIN{OFS="\t"}{print $2, $4, $8, $11, $12}' reviews.csv > rev.tsv
