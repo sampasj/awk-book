@@ -170,6 +170,15 @@ $
 "This is consistent with the personal preferences of at least one of the authors."  
 「これは、少なくとも著者の一人[^1]の個人的な好みと一致している。」
 [^1]: カーニハンに決まっている
+## データのグループ化
+### 男性乗客，女性乗客の人数は何人か？
+```
+$ awk --csv '{g[$11]++} END{for (i in g) print i, g[i]}' passengers.csv
+male 843
+female 466
+sex 1
+$
+```
 
 ## Unicode データ
 ### charfreq Unicode文字の出現数を数えるAwkプログラム
