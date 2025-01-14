@@ -291,6 +291,46 @@ $ awk --csv '{g[$5]++}END{for (i in g) print i, g[i]}' passengers.csv | sort -n 
 1310
 $
 ```
+
+```
+$ awk --csv '{split($4, name, " "); print name[2]}' passengers.csv | sort | uniq -c | sort -nr
+    736 Mr.
+    256 Miss.
+    191 Mrs.
+     59 Master.
+      8 y
+      8 Rev.
+      8 Dr.
+      4 Planke,
+      4 Col.
+      3 Impe,
+      3 Billiard,
+      2 Ms.
+      2 Mlle.
+      2 Messemaeker,
+      2 Major.
+      2 Gordon,
+      2 Carlo,
+      1 the
+      1 der
+      1 Walle,
+      1 Velde,
+      1 Steen,
+      1 Shawah,
+      1 Pelsmaeker,
+      1 Palmquist,
+      1 Mulder,
+      1 Mme.
+      1 Melkebeke,
+      1 Khalil,
+      1 Jonkheer.
+      1 Don.
+      1 Cruyssen,
+      1 Capt.
+      1 Brito,
+      1
+$
+```
 ## Unicode データ
 ### charfreq Unicode文字の出現数を数えるAwkプログラム
 ```
