@@ -409,3 +409,9 @@ $ ./charfreq-kai reviews.csv
 1       »
 $
 ```
+## How many breweries, beer styles, and reviewers are in the beer dataset?
+```
+$ awk --csv '{ brewery[$2]++; style[$8]++; reviewer[$7]++ } END { print length(brewery), "breweries," length(style), "styles," length(reviewer), "reviwers" }' reviews.csv
+5744 breweries,105 styles,33389 reviwers
+$
+```
