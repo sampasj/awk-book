@@ -3,7 +3,8 @@
 function rest(n,    s) {
     s = ""
     while (n <= NF)
-        s = s $n++ " "
+        s = s $(n++) " "
+    
     return substr(s, 1, length(s)-1)  # remove trailing space
 }
 
