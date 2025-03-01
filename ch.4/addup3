@@ -1,0 +1,23 @@
+# addup3 - print sums of numeric columns
+#     input:  rows of integers znd strings
+#       assumes every line has same layout
+#     output: sums of numeric columns
+
+NR == 1 { nfld = NF
+          for (i = 1; i <= NF; i++)
+              numcol[i] = isint($i)
+        }
+        { for (i = 1; i <= NF; i++)
+              if (numcol[i])
+                  sum[i] += $i
+        }
+END     { for (i = 1; i <= nfld; i++) {
+              if (numcol[i])
+                  printf("%g", sum[i])
+              else
+                  printf("--")
+              printf(i < nfld ? "\t" : "\n")
+          }
+        }
+
+function isint(n) { return n ~ /^[+-]?[0-9]+$/ }
