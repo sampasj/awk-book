@@ -1,5 +1,5 @@
 # addup3 - print sums of numeric columns
-#     input:  rows of integers znd strings
+#     input:  rows of integers and strings
 #       assumes every line has same layout
 #     output: sums of numeric columns
 
