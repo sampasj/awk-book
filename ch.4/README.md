@@ -53,3 +53,9 @@ ch.7
 ch.8
 $
 ```
+## addup3 test
+```
+$ awk -f addup3 testdata
+--      13      17      --      3
+$
+```
